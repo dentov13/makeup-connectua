@@ -1,0 +1,51 @@
+{
+  "name": "connectua",
+  "version": "1.0.0",
+  "description": "A connect ukraine web site",
+  "main": "index.js",
+  "author": "Alexander Dubchak",
+  "license": "GNU",
+  "scripts": {
+    "start": "webpack-dev-server --inline --progress --port 8080",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build-qa": "rimraf dist_qa && webpack --config config/webpack.qa.js --progress --profile --bail",
+    "serve-build": "http-server ../dist -p 3000",
+    "serve-build-qa": "http-server ../dist -p 3010",
+    "serve-server": "http-server ./server -p 3030"
+  },
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-drag-and-drop-lists": "^2.1.0",
+    "angular-sanitize": "^1.6.4",
+    "angular-ui-router": "^1.0.0-rc.1",
+    "angular-validation-match": "^1.9.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.18.0",
+    "bootstrap": "3",
+    "css-loader": "^0.26.0",
+    "exports-loader": "^0.6.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.7.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "http-server": "^0.9.0",
+    "imports-loader": "^0.6.5",
+    "inflect": "^0.3.0",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "path-to-regexp": "^1.7.0",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "url-pattern": "^1.0.3",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^1.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

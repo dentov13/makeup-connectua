@@ -10,3 +10,11 @@ $(document).ready(function(){
 		$(item).css({'min-height':$(window).height()});
 	});
 });
+
+$(document).ready(function(){
+	$('.grid-speakers').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 3
+	});
+});

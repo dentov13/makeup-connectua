@@ -102,7 +102,7 @@ html {
   font-weight: 400;
 }
 // .container {width: 70%;}
-.centered {text-align: center;}
+.centered {text-align: center !important;}
 .left {text-align: left !important;}
 .pad-bot{
   margin-bottom:50px;
@@ -142,6 +142,7 @@ h1 {
   font-size: 36px;
   font-weight: 400;
   text-align: center;
+  margin-bottom: 50px;
   &-black {
     color: #000;
   }
@@ -197,8 +198,12 @@ small {
 // ----------------- 2
 .grid {
   &-numbers {
+    width: 80%;
     display: inline-block;
     margin-bottom: 50px;
+  }
+  &-speakers {
+    margin: 40px 0;
   }
 }
 .p {
@@ -206,7 +211,7 @@ small {
     color: #06a09f;
     font-size: 60px;
     font-weight: 700;
-    margin-bottom: -10px;
+    margin-bottom: -5px;
   }
   &-subtitle {
     color: #fffefe;
@@ -315,4 +320,21 @@ small {
     display: block;
     color: red
   }
+}
+
+.pre-te {
+  position: relative;
+}
+#s:before {
+  content: 'International';
+  position: absolute;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  top: 40%;
+  left: -40%;
+  transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
 }

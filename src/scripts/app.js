@@ -6,10 +6,10 @@ $(document).ready(function(){
 		$(item).css({'min-height':$(window).height()+'px'});
 	});
 
-	$('.grid-speakers').slick({
-		infinite: true,
-		slidesToShow: 3,
-		slidesToScroll: 3
-	});
+	// $('.grid-speakers').slick({
+	// 	infinite: true,
+	// 	slidesToShow: 3,
+	// 	slidesToScroll: 3
+	// });
 
 });

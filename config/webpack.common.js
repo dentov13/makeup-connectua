@@ -73,6 +73,7 @@ module.exports = {
 
         new HtmlWebpackPlugin(
             {
+                favicon:'src/images/favicon.png',
                 template: 'src/index.html'
             }
         ), 

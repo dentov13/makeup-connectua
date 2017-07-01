@@ -1,14 +1,3 @@
-///////////////////////////////
-div.block.white.first::after {
-  display: none;
-}
-.first .container {
-  margin-top: 100px;
-}
-
-///////////////////////////////
-
-
 @gray:#202127;
 @white:#ffffff;
 
@@ -17,8 +6,27 @@ body{
   overflow-x: hidden;
 }
 
+html {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 *{
 	box-sizing: border-box;
+}
+
+
+.first .container {
+  margin-top: 100px;
 }
 
 .heading{
@@ -57,22 +65,31 @@ body{
 
 }
 
+.gmap{
+  @media screen and (max-width:1199px) {
+    height:321px;
+  }
+  height:392px;
+}
+
+.partners{
+  margin-top:100px;
+}
+
 .block {
   color: #fff;
   position: relative;
   &-container{
     padding-top: 15%;
-    padding-bottom: 15%;
-    min-height:400px;
+    padding-bottom: 10%;
   }
   &:after{
     background: @white;
     bottom: 0;
     content: '';
     display: block;
-    height: 50%;
+    height: 20%;
     left: 0;
-    // position: absolute;
     position: absolute;
     right: 0;
     transform: skewY(-5.5deg);
@@ -92,6 +109,9 @@ body{
 .gray{
 	background-color:@gray;
 	color:white;
+  &:after{
+    background-color: @gray !important;
+  }
 }
 
 .white{
@@ -103,18 +123,6 @@ body{
   background:transparent;
   position:relative;
 	z-index:8;
-  // &:before{
-  //   content:" ";
-  //   width:100%;
-  //   height:100%;
-  //   position:fixed;
-  //   top:0px;
-  //   left:0px;
-  //   background-image:url('../images/bg2.png');
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  //   z-index:-20;
-  // }
   & .container > img {
     margin-bottom: 30px;
   }
@@ -127,19 +135,19 @@ body{
   }
 }
 
-
-// .bgg{
-//     content:" ";
-//     width:100%;
-//     height:100%;
-//     position:fixed;
-//     top:0px;
-//     left:0px;
-//     background-image:url('../images/bg2.png');
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     z-index:-20;
-// }
+.bgg{
+    content:" ";
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-image:url('../images/bg2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index:-20;
+    background-position: center;
+}
 
 .second{
 	z-index:7;
@@ -168,21 +176,6 @@ body{
 .eigth{
   z-index:1;
 }
-
-// ----------------- ADJUSTMENT
-html {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-}
-a,
-a:hover,
-a:focus,
-a:active,
-a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-// .container {width: 70%;}
 .centered {text-align: center !important;}
 .left {text-align: left !important;}
 .pad-bot{
@@ -465,7 +458,7 @@ small {
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .grid-numbers {width: 100%;}
   .half-tabs {width: 70%;}
-  .resp-img.app-img > img {width: 70%;}
+  .resp-img.app-img > img {width: 80%;}
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .pointer {
@@ -497,9 +490,3 @@ small {
 
   }
 }
-// @media screen and (min-width: 320px) and (max-width: 767px) {}
-// @media screen and (max-width: 319px) {
-//   body {
-//     display: none;
-//   }
-// }

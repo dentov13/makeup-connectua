@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	let all = $('.blocks').children();
 
 	updateHeight();
@@ -8,6 +7,12 @@ $(document).ready(function(){
   		updateHeight();
 	});
 
+	function updateHeight(){
+		let lth = all.length - 1;
+		for(let i=0; i<lth; i++){
+			$(all[i]).css({'min-height':$(window).height()+'px'});
+		}
+	}
 	// $('.partners').slick({
 	// 	infinite: true,
 	// 	slidesToShow: 5,
@@ -29,25 +34,28 @@ $(document).ready(function(){
 	// 	}]
 	// });
 
-	// $(window).on('scroll', () => {
-	//
-	//     let scrollTop = $(this).scrollTop(),
-	//     	elem = $('.nav-bottom'),
-	//     	elemHeight = elem.outerHeight(),
-	//     	topDistance = $('.nav-bottom').offset().top,
-	//     	blockHeight = $('.first').height();
-	//
-  //       if (topDistance < scrollTop ) {
-  //       	if(!elem.hasClass('fixable'))
-  //       		elem.addClass('fixable');
-  //       }
-	//
-  //       if (scrollTop < (blockHeight-elemHeight)) {
-  //       	if(elem.hasClass('fixable'))
-  //       		elem.removeClass('fixable');
-  //       }
-	//
-	// });
+	// Sticky menu
+	$(window).on('scroll', () => {
+
+	    let scrollTop = $(this).scrollTop(),
+	    	elem = $('.nav-bottom'),
+	    	elemHeight = elem.outerHeight(),
+	    	topDistance = $('.nav-bottom').offset().top,
+	    	blockHeight = $('.first').height();
+
+        if (topDistance < scrollTop ) {
+        	if(!elem.hasClass('fixable'))
+        		elem.addClass('fixable');
+        }
+
+        if (scrollTop < (blockHeight-elemHeight)) {
+        	if(elem.hasClass('fixable'))
+        		elem.removeClass('fixable');
+        }
+
+	});
+
+	// Smooth scroll
   $(".nav-top").on("click","a", function (event) {
     event.preventDefault();
     var id = $(this).attr('href'),
@@ -60,11 +68,5 @@ $(document).ready(function(){
     top = $(id).offset().top;
     $('body,html').animate({ scrollTop: top }, 1000);
   });
-
-	function updateHeight(){
-		for(let i=0; i<all.length; i++){
-			$(all[i]).css({'min-height':$(window).height()+'px'});
-		}
-	}
 
 });

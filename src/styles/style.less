@@ -70,6 +70,9 @@ a:visited {
   left: 0px;
   right: 0px;
   background-color: rgba(0,0,0,0.6);
+  .hamburger {
+    display: none;
+  }
 }
 
 .fixable{
@@ -527,6 +530,9 @@ small {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  .nav-bottom {
+    display: block;
+  }
   .pointer {
     margin-bottom: 50px;
     text-align: center;
@@ -555,6 +561,12 @@ small {
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  .nav-bottom {
+    display: block;
+  }
+  .navigation a {
+    font-size: 16px;
+  }
   .main-logo{
     width:250px;
   }
@@ -568,9 +580,40 @@ small {
   .app-img{
     display:none;
   }
+  .footer > img {
+    width: 80%;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 479px) {
+  // .nav-bottom {
+  //   display: block;
+  //   .hamburger {display: block;}
+  //   .menu-item {
+  //        display: block;
+  //   //   position: absolute;
+  //   //   width: 50%;
+  //   //   background-color: #rgba(0, 0, 0, 0.6);
+  //   //   top: 47px;
+  //   //   rigth: 0;
+  //   }
+  //
+  // }
+  .navigation {
+    padding: 15px 0;
+    &.nav-bottom {
+      display: block;
+      .img {
+        display: block;
+        width: 100%;
+      }
+      .menu-item {
+        display: block;
+        font-size: 13px;
+      }
+    }
+  }
   .main-logo{
     width:210px;
   }

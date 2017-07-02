@@ -308,7 +308,7 @@ small {
   margin: 50px auto;
   background-color: @red;
   color: #fff !important;
-  padding: 20px 50px;
+  padding: 20px;
   font-size: 18px;
   cursor: pointer;
   outline: none;
@@ -485,7 +485,19 @@ small {
   -webkit-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
 }
-.ukrainian {content: 'Ukrainian'}
+
+.speaker {
+  margin: 30px 0;
+  &-name {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+  &-title {
+    color: #e2e1e1;
+    font-size: 12px;
+  }
+}
+
 // ----------------- 5
 .questions {
   margin-bottom: 50px;
@@ -553,6 +565,9 @@ small {
   .half-tabs{
     width:80%;
   }
+  .app-img{
+    display:none;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -564,6 +579,12 @@ small {
   }
   .left{
     text-align: center !important;
+  }
+  .nav-tabs > li > a > span {
+    font-size: 15px;
+  }
+  .nav-tabs > li:last-child > a > span {
+    margin-left: -19px;
   }
   .app-img{
     display:none;
@@ -584,10 +605,21 @@ small {
   .title{
     font-size:25px;
   }
+  .mt50 {
+    display: none;
+  }
   .half-tabs{
     width:100%;
   }
   .wide{
     width:auto;
+  }
+  .eight {
+    min-height: max-content !important;
+    margin-bottom: -120px;
+  }
+  .footer > img {
+    width: 90%;
+    margin-bottom: 0;
   }
 }

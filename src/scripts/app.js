@@ -8,25 +8,45 @@ $(document).ready(function(){
   		updateHeight();
 	});
 
-	$('.partners').slick({
-		infinite: true,
-		slidesToShow: 5,
-		autoplay:true,
-		arrows:false,
-		mobileFirst:true,
-		touchMove:true,
-		responsive:[
-		{
-			breakpoint:770,
-			settings:{
-				slidesToShow:5
-			}
-		},{
-			breakpoint:760,
-			settings:{
-				slidesToShow:3
-			}
-		}]
+	// $('.partners').slick({
+	// 	infinite: true,
+	// 	slidesToShow: 5,
+	// 	autoplay:true,
+	// 	arrows:false,
+	// 	mobileFirst:true,
+	// 	touchMove:true,
+	// 	responsive:[
+	// 	{
+	// 		breakpoint:770,
+	// 		settings:{
+	// 			slidesToShow:5
+	// 		}
+	// 	},{
+	// 		breakpoint:760,
+	// 		settings:{
+	// 			slidesToShow:3
+	// 		}
+	// 	}]
+	// });
+
+	$(window).on('scroll', () => {
+
+	    let scrollTop = $(this).scrollTop(),
+	    	elem = $('.nav-bottom'),
+	    	elemHeight = elem.outerHeight(),
+	    	topDistance = $('.nav-bottom').offset().top,
+	    	blockHeight = $('.first').height();
+
+        if (topDistance < scrollTop ) {
+        	if(!elem.hasClass('fixable')) 
+        		elem.addClass('fixable');
+        }
+
+        if (scrollTop < (blockHeight-elemHeight)) {
+        	if(elem.hasClass('fixable')) 
+        		elem.removeClass('fixable');
+        }
+
 	});
 
 	function updateHeight(){

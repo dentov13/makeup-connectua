@@ -81,7 +81,4 @@ $(document).ready(function(){
 				}
 		});
 	});
-
-	// Waypoints
-
 });

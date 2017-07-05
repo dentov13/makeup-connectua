@@ -19,7 +19,6 @@
     "angular-sanitize": "^1.6.4",
     "angular-ui-router": "^1.0.0-rc.1",
     "angular-validation-match": "^1.9.0",
-    "animate.css": "^3.5.2",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
     "babel-polyfill": "^6.23.0",
@@ -42,7 +41,6 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "url-pattern": "^1.0.3",
-    "waypoints": "^4.0.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^1.0.2"

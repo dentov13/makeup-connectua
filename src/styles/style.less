@@ -50,7 +50,7 @@ a:visited {
     line-height: 36px;
   }
   a{
-    font-size:22px;
+    font-size:18px;
     &:hover{
       text-decoration: underline;
     }
@@ -286,7 +286,7 @@ h1 {
   font-weight: 400;
   &-gray {
     color: #adabab;
-    font-size: 17px;
+    font-size: 18px;
   }
   &-black {
     color: black;
@@ -350,6 +350,20 @@ small {
     font-size: 18px;
     font-weight: 400;
   }
+  .count {
+    position: relative;
+  }
+}
+
+.count-plus-container {position: relative;}
+.count-plus {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  color: #06a09f;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: -5px;
 }
 
 .bold{
@@ -610,20 +624,19 @@ small {
     padding: 15px 0;
     &.nav-bottom {
       display: block;
-      .img {
-        display: block;
+      img {
         width: 100%;
       }
       .menu-logo {
         width: 55px;
       }
       .menu-item {
-        display: none;
-        font-size: 13px;
+        // display: none;
+        font-size: 11px;
       }
-      .hamburger {
-        display: block;
-      }
+      // .hamburger {
+      //   display: block;
+      // }
     }
   }
   .main-logo{
@@ -642,7 +655,7 @@ small {
     }
   }
   .nav-tabs > li > a > span {
-    font-size: 15px;
+    font-size: 13px;
   }
   .nav-tabs > li:last-child > a > span {
     margin-left: -19px;

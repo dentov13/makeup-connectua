@@ -69,4 +69,19 @@ $(document).ready(function(){
     $('body,html').animate({ scrollTop: top }, 1000);
   });
 
+	// Counting numbers
+	$('.count').each(function () {
+		$(this).prop('Counter',0).animate({
+				Counter: $(this).text()
+		}, {
+				duration: 4000,
+				easing: 'swing',
+				step: function (now) {
+						$(this).text(Math.ceil(now));
+				}
+		});
+	});
+
+	// Waypoints
+
 });

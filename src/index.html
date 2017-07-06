@@ -14,20 +14,6 @@
 		<div class="bgg"></div>
 		<div class="blocks">
 			<div class="block gray first">
-				<div class="navigation">
-					<div class="container">
-						<div class="row nav-top">
-							<div class="col-md-2"><a href="#"><img src="./images/logo-white.png" class="menu-logzo" alt=""></a></div>
-							<div class="col-md-2"><a href="#about">About</a></div>
-							<div class="col-md-2"><a href="#speakers">Speakers</a></div>
-							<div class="col-md-2"><a href="#agenda">Agenda</a></div>
-							<div class="col-md-2"><a href="#contact">Contact us</a></div>
-							<!-- <div class="col-md-2"><a href="#">EN</a></div> -->
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-
 				<div class="block-container">
 					<div class="container">
 						<div class="row">
@@ -57,7 +43,6 @@
 							<div class="col-md-2 col-sm-2 col-xs-2"><a class="menu-item" href="#speakers">Speakers</a></div>
 							<div class="col-md-2 col-sm-2 col-xs-2"><a class="menu-item" href="#agenda">Agenda</a></div>
 							<div class="col-md-2 col-sm-3 col-xs-2"><a class="menu-item" href="#contact">Contacts</a></div>
-							<!-- <div class="col-md-2"><a href="#">EN</a></div> -->
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -458,13 +443,13 @@
 										<br>
 										<div class="app-stores">
 											<div class="row">
-												<div class="col-xs-12 col-md-4 col-lg-5">
+												<div class="col-xs-6 col-md-4 col-lg-5">
 													<a href="#">
 														<img src="images/appstore.png" class="stores-img" alt="">
 													</a>
 												</div>
 												
-												<div class="col-xs-12 col-md-4 col-lg-5">
+												<div class="col-xs-6 col-md-4 col-lg-5">
 													<a href="#">
 														<img src="images/googleplay.png"class="stores-img"  alt="">
 													</a>
@@ -539,11 +524,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="block gray eigth">
-				<div class="block-container" id="contact">
-					<div class="footer centered">
-						<div class="container">
-							<div class="row contacts" style="display: none;">
+			<div class="block gray eigth bg">
+				<div class="block-container bg" id="contact">
+					<div class="footer centered bg">
+						<div class="container bg">
+							<!--<div class="row contacts">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 centered">
 									<span class="footer-text">LET`S TALK</span>
 								</div>
@@ -553,20 +538,34 @@
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 centered">
 									<span class="footer-text footer-text-i">INSTAGRAM FEED</span>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							</div>-->
+							<div class="row bg">
+								<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 bg">
+									<form method="POST" name="call" action="" class="contact-form">
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+											<input type="text" name="Name" placeholder="Name" class="input input-text" required><br>
+											<input type="text" name="Number" placeholder="Number" class="input input-text" required><br>
+											<input type="text" name="E-mail" placeholder="E-mail" class="input input-text" required>
+											<input type="submit" value="Send" class="btn-red" disabled style="cursor: no-drop">
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+											<textarea name="Message" placeholder="Message" class="input input-textarea"></textarea>
+										</div>
+									</form>	  								
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 bg">
 									<div class="footer-mail">
 										<p><b>Contact for sponsors or press Jorgen Bo: </b></p>
 										<a href="mailto:jorgen@connectukraine.com">jorgen@connectukraine.com</a>		  									
-  									</div>		  								
+  									</div>
+									<div class="copyright">Website is created by V3 Agency in cooperation with Facility</div>	  								
 								</div>
   							</div>		  							
 						</div>
 					</div>
 					<div class="clearfix"></div>
 				</div>
-				<div class="copyright">Website is created by V3 Agency in cooperation with Facility</div>
+				<!--<div class="copyright">Website is created by V3 Agency in cooperation with Facility</div>-->
 			</div>
 		</div>
 	</body>

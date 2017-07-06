@@ -8,7 +8,7 @@ $(document).ready(function(){
 	});
 
 	function updateHeight(){
-		let lth = all.length - 1;
+		let lth = all.length;
 		for(let i=0; i<lth; i++){
 			$(all[i]).css({'min-height':$(window).height()+'px'});
 		}
@@ -74,11 +74,21 @@ $(document).ready(function(){
 		$(this).prop('Counter',0).animate({
 				Counter: $(this).text()
 		}, {
-				duration: 4000,
+				duration: 8000,
 				easing: 'swing',
 				step: function (now) {
 						$(this).text(Math.ceil(now));
 				}
+		});
+	});
+
+	// Contact-form
+	$('.contact-form').submit(function() {
+		var dataString = $(this).serialize();
+		$.ajax({
+			type: "POST",
+			url: "call.php",
+			data: {dataString}
 		});
 	});
 });

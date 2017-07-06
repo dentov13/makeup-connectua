@@ -8,7 +8,7 @@ $(document).ready(function(){
 	});
 
 	function updateHeight(){
-		let lth = all.length;
+		let lth = all.length - 1;
 		for(let i=0; i<lth; i++){
 			$(all[i]).css({'min-height':$(window).height()+'px'});
 		}
@@ -74,8 +74,8 @@ $(document).ready(function(){
 		$(this).prop('Counter',0).animate({
 				Counter: $(this).text()
 		}, {
-				duration: 8000,
-				easing: 'swing',
+				duration: 10000,
+				easing: 'linear',
 				step: function (now) {
 						$(this).text(Math.ceil(now));
 				}

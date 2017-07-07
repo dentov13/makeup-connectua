@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	let menuOn = false;
 	let all = $('.blocks').children();
 
 	updateHeight();
@@ -13,6 +14,33 @@ $(document).ready(function(){
 			$(all[i]).css({'min-height':$(window).height()+'px'});
 		}
 	}
+
+	$('.togglee').click(()=>{
+		toggleMenu();
+	});
+
+	$('.ham-mask').click(()=>{
+		toggleMenu();
+	});
+
+	function toggleMenu(){
+		if(menuOn){
+			$('.hamburger').find('.ham-menu').css({'left':'-100%'});
+			$('.hamburger').fadeOut(150,()=>{
+				$('body').removeClass('no-scroll');
+			});
+			menuOn = !menuOn;
+		}else{
+			$('.hamburger').fadeIn(150,()=>{
+				$('body').addClass('no-scroll');
+			});
+			$('.hamburger').find('.ham-menu').css({'left':'0%'});
+			menuOn = !menuOn;
+		}
+		
+	}
+
+
 	// $('.partners').slick({
 	// 	infinite: true,
 	// 	slidesToShow: 5,
@@ -36,7 +64,6 @@ $(document).ready(function(){
 
 	// Sticky menu
 	$(window).on('scroll', () => {
-
 	    let scrollTop = $(this).scrollTop(),
 	    	elem = $('.nav-bottom'),
 	    	elemHeight = elem.outerHeight(),
@@ -57,12 +84,14 @@ $(document).ready(function(){
 
 	// Smooth scroll
   $(".nav-top").on("click","a", function (event) {
+  	if($(this).find('div').hasClass('langs') || $(this).find('div').hasClass('lang')) return;
     event.preventDefault();
     var id = $(this).attr('href'),
     top = $(id).offset().top;
     $('body,html').animate({ scrollTop: top }, 1000);
   });
   $(".nav-bottom").on("click","a", function (event) {
+  	if($(this).find('div').hasClass('langs') || $(this).find('div').hasClass('lang')) return;
     event.preventDefault();
     var id = $(this).attr('href'),
     top = $(id).offset().top;

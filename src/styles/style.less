@@ -65,6 +65,10 @@ a:visited {
   @media screen and (max-width:992px) {
       // display:none;
   }
+  @media screen and (max-width: 479px) {
+    padding-top:20px;
+    padding-bottom: 20px;
+  }
 }
 
 .nav-bottom{
@@ -577,7 +581,8 @@ small {
   // bottom: 15px;
   font-size: 15px;
   text-align: center;
-  margin: 100px 0 -100px 0;
+  // margin: 100px 0 -100px 0;
+  margin-top:100px;
   color: #4C72AA;
 }
 .contact-form {
@@ -686,25 +691,6 @@ input.btn-red {
   //   }
   //
   // }
-  // .navigation {
-  //   padding: 15px 0;
-  //   &.nav-bottom {
-  //     display: block;
-  //     img {
-  //       width: 100%;
-  //     }
-  //     .menu-logo {
-  //       width: 55px;
-  //     }
-  //     .menu-item {
-  //       // display: none;
-  //       font-size: 11px;
-  //     }
-  //     // .hamburger {
-  //     //   display: block;
-  //     // }
-  //   }
-  // }
   .main-logo{
     width:210px;
   }
@@ -782,13 +768,10 @@ input.btn-red {
     margin-top: 40px;
 }
 
-.hidden-sm{
-  display:block;
-  @media screen and (max-width: 479px) {
-    display:none;
-  }
+.togglee{
+  font-size: 28px;
+  top: 6px;
 }
-
 
 .hamburger{
   display:none;
@@ -809,12 +792,23 @@ input.btn-red {
     z-index:1005;
     position:relative;
     left:-100%;
-    width:70%;
+    width:75%;
     background-color:@gray;
     color:white;
     border-right:1px solid rgba(255,255,255,0.1);
     height:100%;
     transition: all 0.3s ease;
+    .has-icon{
+      line-height: 25px;
+      i{
+        font-size:25px;
+        vertical-align: top;
+        margin-right:20px !important;
+      }
+      & > *:first-child{
+        margin-right:12px;
+      }
+    }
     ul{
       padding:0;
       margin:0;
@@ -828,6 +822,44 @@ input.btn-red {
         }
       }
     }
+  }
+}
+
+.fb-icon{
+  width:30px;
+  height:30px;
+  background-image: url('../images/fb-icon.png');
+  display: inline-block;
+  vertical-align: top;
+  background-size: contain;
+  @media only screen and (-o-min-device-pixel-ratio: 5/4),
+  only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min--moz-device-pixel-ratio: 1.25),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 1.25dppx) {
+    background-image: url('../images/fb-icon@2x.png');
+  }
+}
+
+.inst-icon{
+  width:30px;
+  height:30px;
+  background-image: url('../images/inst-icon.png');
+  display: inline-block;
+  vertical-align: top;
+  background-size: contain;
+  @media only screen and (-o-min-device-pixel-ratio: 5/4),
+  only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min--moz-device-pixel-ratio: 1.25),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 1.25dppx) {
+    background-image: url('../images/inst-icon@2x.png');
+  }
+}
+
+.langs{
+  .lang{
+    white-space: nowrap;
   }
 }
 

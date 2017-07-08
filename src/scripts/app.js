@@ -27,12 +27,12 @@ $(document).ready(function(){
 		if(menuOn){
 			$('.hamburger').find('.ham-menu').css({'left':'-100%'});
 			$('.hamburger').fadeOut(150,()=>{
-				$('body').removeClass('no-scroll');
+				$('html').removeClass('no-scroll');
 			});
 			menuOn = !menuOn;
 		}else{
 			$('.hamburger').fadeIn(150,()=>{
-				$('body').addClass('no-scroll');
+				$('html').addClass('no-scroll');
 			});
 			$('.hamburger').find('.ham-menu').css({'left':'0%'});
 			menuOn = !menuOn;
@@ -83,20 +83,57 @@ $(document).ready(function(){
 	});
 
 	// Smooth scroll
-  $(".nav-top").on("click","a", function (event) {
-  	if($(this).find('div').hasClass('langs') || $(this).find('div').hasClass('lang')) return;
-    event.preventDefault();
-    var id = $(this).attr('href'),
-    top = $(id).offset().top;
-    $('body,html').animate({ scrollTop: top }, 1000);
-  });
-  $(".nav-bottom").on("click","a", function (event) {
-  	if($(this).find('div').hasClass('langs') || $(this).find('div').hasClass('lang')) return;
-    event.preventDefault();
-    var id = $(this).attr('href'),
-    top = $(id).offset().top;
-    $('body,html').animate({ scrollTop: top }, 1000);
-  });
+	$(".nav-top").on("click","a", function (event) {
+
+		if($(this).find('div').hasClass('langs') || 
+			$(this).find('div').hasClass('lang')) return;
+
+		if($(this).attr('href')==='#') {event.preventDefault();return};
+
+		event.preventDefault();
+
+		var id = $(this).attr('href'),
+
+		top = $(id).offset().top;
+
+		$('body,html').animate({ scrollTop: top }, 1000);
+
+	});
+	$(".nav-bottom").on("click","a", function (event) {
+
+		if($(this).find('div').hasClass('langs') || 
+			$(this).find('div').hasClass('lang')) return;
+
+		if($(this).attr('href')==='#') {event.preventDefault();return};
+
+		event.preventDefault();
+
+		var id = $(this).attr('href'),
+
+		top = $(id).offset().top;
+
+		$('body,html').animate({ scrollTop: top }, 1000);
+
+	});
+
+	$('.ham-menu').on("click","a", function (event) {
+
+		if($(this).find('div').hasClass('langs') || 
+			$(this).find('div').hasClass('lang')) return;
+
+		if($(this).attr('href')==='#') {event.preventDefault();return};
+
+		event.preventDefault();
+
+		toggleMenu();
+
+		var id = $(this).attr('href'),
+
+		top = $(id).offset().top;
+
+		$('body,html').animate({ scrollTop: top }, 1000);
+
+	});
 
 	// Counting numbers
 	$('.count').each(function () {

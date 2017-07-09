@@ -1,5 +1,27 @@
 $(document).ready(function(){
+
+	$.fn.isOnScreen = function(){
+
+	    var win = $(window);
+
+	    var viewport = {
+	        top : win.scrollTop(),
+	        left : win.scrollLeft()
+	    };
+	    viewport.right = viewport.left + win.width();
+	    viewport.bottom = viewport.top + win.height();
+
+	    var bounds = this.offset();
+	    bounds.right = bounds.left + this.outerWidth();
+	    bounds.bottom = bounds.top + this.outerHeight();
+
+	    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+	};
+
+
 	let menuOn = false;
+	let isCounting = false;
 	let all = $('.blocks').children();
 
 	updateHeight();
@@ -64,6 +86,9 @@ $(document).ready(function(){
 
 	// Sticky menu
 	$(window).on('scroll', () => {
+
+		checkCounter();
+
 	    let scrollTop = $(this).scrollTop(),
 	    	elem = $('.nav-bottom'),
 	    	elemHeight = elem.outerHeight(),
@@ -81,6 +106,26 @@ $(document).ready(function(){
         }
 
 	});
+
+	function checkCounter(){
+		if ($('.grid-numbers').isOnScreen()) {
+			if(isCounting) return;
+			isCounting = true;
+            $('.count').each(function () {
+				$(this).prop('Counter',0).animate({
+					Counter: $(this).text()
+				}, {
+					duration: 10000,
+					easing: 'linear',
+					step: function (now) {
+							$(this).text(Math.ceil(now));
+					}
+				});
+			});
+        } else {
+            // The element is NOT visible, do something else
+        }
+	}
 
 	// Smooth scroll
 	$(".nav-top").on("click","a", function (event) {
@@ -102,7 +147,7 @@ $(document).ready(function(){
 	$(".nav-bottom").on("click","a", function (event) {
 
 		if($(this).find('div').hasClass('langs') || 
-			$(this).find('div').hasClass('lang')) return;
+			$(this).find('div').hasClass('lang') || $(this).hasClass('lang')) return;
 
 		if($(this).attr('href')==='#') {event.preventDefault();return};
 
@@ -133,19 +178,6 @@ $(document).ready(function(){
 
 		$('body,html').animate({ scrollTop: top }, 1000);
 
-	});
-
-	// Counting numbers
-	$('.count').each(function () {
-		$(this).prop('Counter',0).animate({
-				Counter: $(this).text()
-		}, {
-				duration: 10000,
-				easing: 'linear',
-				step: function (now) {
-						$(this).text(Math.ceil(now));
-				}
-		});
 	});
 
 	// Contact-form

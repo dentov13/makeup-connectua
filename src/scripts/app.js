@@ -127,11 +127,7 @@ $(document).ready(function(){
         }
 	}
 
-	// Smooth scroll
-	$(".nav-top").on("click","a", function (event) {
-
-		if($(this).find('div').hasClass('langs') || 
-			$(this).find('div').hasClass('lang')) return;
+	$('.anchor').click(function(){
 
 		if($(this).attr('href')==='#') {event.preventDefault();return};
 
@@ -142,29 +138,9 @@ $(document).ready(function(){
 		top = $(id).offset().top;
 
 		$('body,html').animate({ scrollTop: top }, 1000);
-
-	});
-	$(".nav-bottom").on("click","a", function (event) {
-
-		if($(this).find('div').hasClass('langs') || 
-			$(this).find('div').hasClass('lang') || $(this).hasClass('lang')) return;
-
-		if($(this).attr('href')==='#') {event.preventDefault();return};
-
-		event.preventDefault();
-
-		var id = $(this).attr('href'),
-
-		top = $(id).offset().top;
-
-		$('body,html').animate({ scrollTop: top }, 1000);
-
 	});
 
-	$('.ham-menu').on("click","a", function (event) {
-
-		if($(this).find('div').hasClass('langs') || 
-			$(this).find('div').hasClass('lang')) return;
+	$('.m-anchor').click(function(){
 
 		if($(this).attr('href')==='#') {event.preventDefault();return};
 
@@ -177,7 +153,6 @@ $(document).ready(function(){
 		top = $(id).offset().top;
 
 		$('body,html').animate({ scrollTop: top }, 1000);
-
 	});
 
 	// Contact-form

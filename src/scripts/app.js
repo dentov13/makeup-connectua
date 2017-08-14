@@ -127,17 +127,6 @@ $(document).ready(function(){
         }
 	}
 
-	// Tickets
-	$('#tickets').click(function() {
-		window.location = "http://connectukraine.com/thankyou.html"; 
-	});
-	$('#tickets-ru').click(function() {
-		window.location = "http://connectukraine.com/thankyou_ru.html"; 
-	});
-	$('#tickets-ua').click(function() {
-		window.location = "http://connectukraine.com/thankyou_ua.html"; 
-	});
-
 	$('.anchor').click(function(){
 
 		if($(this).attr('href')==='#') {event.preventDefault();return};
